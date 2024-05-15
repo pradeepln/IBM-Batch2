@@ -3,7 +3,7 @@ package com.ibm.training.basics;
 public class Employee {
 	
 	int id;
-	String name;
+	String name = "TBD";
 	protected float salary;
 	
 	public Employee(int id,String name,float salary) {
