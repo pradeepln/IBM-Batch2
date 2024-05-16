@@ -1,4 +1,4 @@
-package com.ibm.training.basics;
+package com.ibm.training.strings;
 
 import java.util.Arrays;
 
