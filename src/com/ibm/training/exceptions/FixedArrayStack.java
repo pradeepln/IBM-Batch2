@@ -11,7 +11,7 @@ public class FixedArrayStack implements Stack {
 	}
 	
 	@Override
-	public void push(Object anElement) {
+	public void push(Object anElement)  {
 		if(top == contents.length - 1) {
 			throw new StackFullException("The stack is full with capacity : "+contents.length);
 		}
