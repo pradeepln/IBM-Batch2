@@ -1,6 +1,9 @@
 package com.ibm.training.datetime;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.Month;
 
 public class SimpleDateOps {
 
@@ -8,12 +11,7 @@ public class SimpleDateOps {
 		LocalDate today = LocalDate.now();
 		
 		System.out.println("Today: ");
-		System.out.println("Day of year "+today.getDayOfYear());
-		System.out.println("Day of month "+today.getDayOfMonth());
-		System.out.println("Day of week "+today.getDayOfWeek().name());
-		System.out.println("Month "+today.getMonth().name());
-		System.out.println("Year "+today.getYear());
-		System.out.println("_______________");
+		printDate(today);
 		
 		int day = Integer.parseInt(args[0]);
 		int month = Integer.parseInt(args[1]);
@@ -22,11 +20,37 @@ public class SimpleDateOps {
 		LocalDate birthDay = LocalDate.of(year, month, day);
 		
 		System.out.println("Your BirthDay: ");
-		System.out.println("Day of year "+birthDay.getDayOfYear());
-		System.out.println("Day of month "+birthDay.getDayOfMonth());
-		System.out.println("Day of week "+birthDay.getDayOfWeek().name());
-		System.out.println("Month "+birthDay.getMonth().name());
-		System.out.println("Year "+birthDay.getYear());
+		printDate(birthDay);
+		
+		LocalDate yesterday = today.minusDays(1);
+		System.out.println("Yesterday:");
+		printDate(yesterday);
+		
+		LocalDate tomorrow = today.plusDays(1);
+		System.out.println("Tomorrow:");
+		printDate(tomorrow);
+		
+		LocalDate thisDayLastYear = today.minusYears(1);
+		System.out.println("thisDayLastYear:");
+		printDate(thisDayLastYear);
+		
+		LocalDate resultDay = LocalDate.of(2024, Month.JUNE,4);
+		System.out.println("Result on: ");
+		printDate(resultDay);
+		
+		LocalTime timeNow = LocalTime.now();
+		System.out.println(timeNow);
+		LocalDateTime dateTimeNow = LocalDateTime.now();
+		System.out.println(dateTimeNow);
+	}
+
+	private static void printDate(LocalDate aDate) {
+		System.out.println(aDate);
+		System.out.println("Day of year "+aDate.getDayOfYear());
+		System.out.println("Day of month "+aDate.getDayOfMonth());
+		System.out.println("Day of week "+aDate.getDayOfWeek().name());
+		System.out.println("Month "+aDate.getMonth().name());
+		System.out.println("Year "+aDate.getYear());
 		System.out.println("_______________");
 	}
 

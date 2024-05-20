@@ -16,6 +16,9 @@ public class LiteralDemo {
 		m1(42d);
 		m1(23.1);
 		m1(23.1f);
+		
+		int oct = 0x11;
+		System.out.println(oct);
 	}
 	
 	public static void m1(int x) {
