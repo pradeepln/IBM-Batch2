@@ -1,8 +1,10 @@
 package com.ibm.training.collections;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 import com.ibm.training.basics.Employee;
 
@@ -35,13 +37,37 @@ public class ListDemo {
 		
 		
 		//looping
+		//DON'T DO THIS KIND OF LOOP USING GET(I)
 		for(int i=0;i<list.size();i++) {
 			String aValue = list.get(i);
 			//do whatever with aValue
-			System.out.println(aValue);
+			//System.out.println(aValue);
 		}
 		
+		//Explicit iterator
 		
+		Iterator<String> it = list.iterator();
+		while(it.hasNext()) {
+			String aValue = it.next();
+			
+			//do whatever with aValue
+			/*
+			 * if(aValue.startsWith("x")) { it.remove(); }
+			 */
+		}
+		
+		//Implicit Iterator or enhanced for/for-each
+		
+		for(String aValue : list) {
+			//do whatever with aValue
+		}
+		
+//		ListIterator<String> li = list.listIterator();
+//		while(li.hasNext()) {
+//			String aValue = li.next();
+//			//
+//			li.add("temop");
+//		}
 	}
 
 	private static void genericArrayList() {
