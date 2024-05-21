@@ -1,14 +1,67 @@
 package com.ibm.training.collections;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 import com.ibm.training.basics.Employee;
 
 public class ListDemo {
 
 	public static void main(String[] args) {
-		simpleRawListOps();
+		//simpleRawListOps();
+		//genericArrayList();
+		
+		List<String> list = new LinkedList<>();
+		list.add("abc");
+		list.add("xyz");
+		list.add("tvf");
+		
+		someAlgo(list);
+	}
 
+	private static void someAlgo(List<String> list) {
+		
+		//some complex logic
+		list.add(0, "first");
+		
+		//lots of logic....
+		list.remove(1);
+		
+		//compute randomIndex
+		int randomIndex = 2;
+		//lots of stuff
+		list.get(randomIndex);
+		
+		
+		//looping
+		for(int i=0;i<list.size();i++) {
+			String aValue = list.get(i);
+			//do whatever with aValue
+			System.out.println(aValue);
+		}
+		
+		
+	}
+
+	private static void genericArrayList() {
+		ArrayList<String> sList = new ArrayList<String>(); // List is declaration is generic. sList is a specific type of list
+		
+		sList.add("hello");
+		sList.add("123");
+		
+		//sList.add(432.9); //caught at compile time
+		
+		ArrayList<Integer> iList = new ArrayList<Integer>(); //iList is a specific type of list 
+		
+		//iList.add("123");//compile time type safety
+		iList.add(123);
+		iList.add(new Integer(877));
+		
+		//iList.add(23.4);//compile time type safety
+		
+		String aString = sList.get(0);
+		int aValue = iList.get(0);
 	}
 
 	private static void simpleRawListOps() {
