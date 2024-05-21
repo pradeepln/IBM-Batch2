@@ -1,6 +1,6 @@
 package com.ibm.training.collections;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
@@ -9,7 +9,8 @@ public class MapDemo {
 
 	public static void main(String[] args) {
 		
-		Map<String, Integer> runsMap = new HashMap<>();
+//		Map<String, Integer> runsMap = new HashMap<>();
+		Map<String, Integer> runsMap = new LinkedHashMap<>();
 		runsMap.put("rohit", 45);
 		runsMap.put("gill", 78);
 		runsMap.put("bumrah", 99);
