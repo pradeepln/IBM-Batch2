@@ -1,11 +1,14 @@
 package com.ibm.training.generics;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class GenericsDemo {
 
-	
+	public static <T> void sort(T[] arr,Comparator<T> c) {
+		
+	}
 	public static <T> T pickBestFrom(List<T> l) {
 	//some complex logic not shown here
 		return l.get(0);
