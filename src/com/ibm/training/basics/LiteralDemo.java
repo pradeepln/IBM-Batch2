@@ -17,8 +17,20 @@ public class LiteralDemo {
 		m1(23.1);
 		m1(23.1f);
 		
-		int oct = 0x11;
+		int oct = 011;
 		System.out.println(oct);
+		
+		int hexLit = 0x11a;
+		System.out.println(hexLit);
+		
+		char c = 'a';
+		System.out.println(c);
+		
+		char unic = '\u0c85';
+		System.out.println(unic);
+		
+		String uniStr = "\u0c85\u0c86";
+		System.out.println(uniStr);
 	}
 	
 	public static void m1(int x) {

@@ -1,11 +1,24 @@
 package com.ibm.training.threads;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class ThreadDemo {
 
 	public static void main(String[] args) throws InterruptedException {
 		// byExtendingThread();
-		byImplementingRunnable();
+		//byImplementingRunnable();
+		
+		threadSafeDS();
 
+	}
+
+	private static void threadSafeDS() {
+		Map<String, String> simpleHM = new HashMap<>(); //is NOT thread-safe. No synchronization nor any other kind of locking
+		Map<String,String> syncHM = Collections.synchronizedMap(new HashMap<>()); // is thread-safe. All methods synchronized
+		Map<String,String> concHm = new ConcurrentHashMap<>();// is thread-safe and not excessively synchronized like the above
 	}
 
 	private static void byImplementingRunnable() throws InterruptedException {
@@ -19,6 +32,7 @@ public class ThreadDemo {
 		
 		Thread t1 = new Thread(task1);
 		Thread t2 = new Thread(task2);
+		
 		
 		t1.start();
 		t2.start();
