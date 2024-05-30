@@ -80,6 +80,12 @@ public class MyNotePad extends Frame implements ActionListener {
 	}
 
 	private void doSave() {
+		if(absolutePathToFile == null) {
+			
+			FileDialog fd = new FileDialog(this, "Specify Save", FileDialog.SAVE);
+			fd.setVisible(true);
+			absolutePathToFile = fd.getDirectory()+fd.getFile();
+		}
 		
 		String text = textArea.getText();
 		
